@@ -12,6 +12,8 @@ const Footer = () => (
         src={logo}
         alt="hoobank"
         className="w-[150px] h-[50px] object-contain m-auto"
+        height="auto"
+        width="auto"
       />
       <p className="font-poppins font-normal text-center text-[18px] leading-[27px] text-slate-500 flex items-center mt-2">
         Copyright Ⓒ 2022 Otipy. All Rights Reserved.
@@ -28,6 +30,8 @@ const Footer = () => (
             index !== socialMedia.length - 1 ? "mr-6" : "mr-0"
           }`}
           onClick={() => window.open(social.link)}
+          height="auto"
+          width="auto"
         />
       ))}
     </div>

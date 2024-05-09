@@ -17,6 +17,8 @@ const GetStarted = () => (
           src={arrowUp}
           alt="arrow-up"
           className="w-[23px] h-[23px] object-contain"
+          height="auto"
+          width="auto"
         />
       </div>
 

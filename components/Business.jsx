@@ -5,14 +5,7 @@ import { styles, layout } from "@/styles/style";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const FeatureCard = ({
-  icon,
-  title,
-  content,
-  index,
-  activeScroll,
-  features,
-}) => (
+const FeatureCard = ({ icon, title, content, index, features }) => (
   <div
     className={`flex flex-row md:p-6 p-3 rounded-[20px] md:w-[45%] sm:w-[100%] xs:w-[100%] ${
       index !== features.length - 1 ? "sm:mb-2" : "sm:mb-2"

@@ -8,6 +8,8 @@ const Billing = () => (
         src={bill}
         alt="billing"
         className="w-[100%] h-[100%] relative z-[5]"
+        height="auto"
+        width="auto"
       />
 
       {/* gradient start */}
@@ -31,11 +33,15 @@ const Billing = () => (
           src={apple}
           alt="google_play"
           className="w-[128.86px] h-[42.05px] object-contain mr-5 cursor-pointer"
+          height="auto"
+          width="auto"
         />
         <Image
           src={google}
           alt="google_play"
           className="w-[144.17px] h-[43.08px] object-contain cursor-pointer"
+          height="auto"
+          width="auto"
         />
       </div>
     </div>
