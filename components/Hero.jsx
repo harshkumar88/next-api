@@ -43,6 +43,7 @@ const Hero = () => {
             loading="eager"
             height="auto"
             width="auto"
+            priority
           />
 
           {/* gradient start */}
