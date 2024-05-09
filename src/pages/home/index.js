@@ -8,19 +8,13 @@ import Opportunity from "../../../components/Opportunity";
 import Invoice from "../../../components/Invoice";
 import Image from "next/image";
 import { useMediaQuery } from "@react-hook/media-query";
-import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 
 const Home = (props) => {
   const [changeHeader, setChangeHeader] = useState(false);
   const [loader, setLoader] = useState(false);
   const isMobile = useMediaQuery("only screen and (max-width: 800px)");
-  const ref = useRef(null);
 
-  const options = {
-    smooth: true,
-    multiplier: 2,
-  };
-  const { features, managementList, supportFeature, feedback, stats } = props;
+  const { features, managementList, supportFeature } = props;
 
   useEffect(() => {
     setLoader(false);
@@ -38,7 +32,6 @@ const Home = (props) => {
   }, [loader]);
 
   function handleScroll() {
-    window.scrollY = {};
     const scrolledToTop = window.scrollY === 0;
     setChangeHeader(!scrolledToTop);
   }
@@ -65,8 +58,6 @@ const Home = (props) => {
           <Navbar changeHeader={changeHeader} />
         </div>
       </div>
-      {/* <LocomotiveScrollProvider options={options} containerRef={ref}>
-        <main data-scroll-container ref={ref}> */}
       <div className={` ${styles.flexStart} hero_bg `}>
         <div className={`${styles.boxWidth}`}>
           <Hero />
@@ -84,10 +75,8 @@ const Home = (props) => {
           <Opportunity isMobile={isMobile} managementList={managementList} />
           <Invoice isMobile={isMobile} managementList={managementList} />
         </div>
-      </div>{" "}
+      </div>
       <Footer />
-      {/* </main>{" "}
-      </LocomotiveScrollProvider> */}
     </div>
   );
 };

@@ -56,7 +56,7 @@ const updateUsers = async (req, res) => {
     });
 
     updatedUser.save();
-    res.status(201).send("User Updated successfully");
+    res.status(200).send("User Updated successfully");
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Internal Server Error");
@@ -69,13 +69,17 @@ const deleteUser = async (req, res) => {
     const id = users?.[1];
     let msg = "";
     if (id && id != undefined) {
-      await User.findOneAndDelete(id);
-      msg = "User deleted successfully";
+      const user = await User.findByIdAndDelete(id);
+      if (user && user != undefined) {
+        msg = "User deleted successfully";
+      } else {
+        msg = "No User Found";
+      }
     } else {
       await User.deleteMany({});
       msg = "Users deleted successfully";
     }
-    res.status(201).send(msg);
+    res.status(200).send(msg);
   } catch (error) {
     console.error("Error:", error);
     res.status(500).send("Internal Server Error");
